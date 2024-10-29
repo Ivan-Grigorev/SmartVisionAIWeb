@@ -5,7 +5,8 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     environment:
-      - SECRET_KEY=django-insecure-p=dv9p3i7j$r!dw=8y(=igb(_+6w1i=8hsvt0w7ho1rn+pq!ti
+      - DJANGO_SECRET_KEY=django-insecure-p=dv9p3i7j$r!dw=8y(=igb(_+6w1i=8hsvt0w7ho1rn+pq!ti
+      - OPENAI_API_KEY=sk-4QzlJ0o-XeNa0vIOGyjXOtxmW_11IujZOX6tcwgn9aT3BlbkFJ1BD_htdP-gNm2Irh1tBmbB617gSHrceON3tcaaotEA
     volumes:
       - .:/app
     ports:
