@@ -1,0 +1,58 @@
+<!-- Modal for Generate CSV Based on Captions -->
+{% extends 'homepage.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/modals_style.css' %}">
+
+<div class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="window.location.href='{% url 'homepage' %}'">&times</span>
+        <h2 class="modal-title">Generate CSV Based on Captions</h2>
+        <p class="modal-description">Describe all images in the source folder using ChatGPT, utilizing captions extracted from image metadata, generate a CSV file with the image filename, titles, descriptions, and keywords, and save the CSV file to the destination folder.</p>
+        <form method="post">
+            {% csrf_token %}
+
+            <label>Prompt Message
+                <span class="info-icon"><i class="fa fa-info-circle"></i>
+                    <div class="tooltip">
+                        Prompt message for ChatGPT with image describing instructions (required)
+                    </div>
+                </span>
+            </label>
+            <input type="text" required>
+
+            <!-- Folders Inputs-->
+            <div class="folders-inputs-container">
+                <div class="folder-input">
+                    <label>Source Folder
+                        <span class="info-icon">
+                            <i class="fa fa-info-circle"></i>
+                            <div class="tooltip">
+                                The Folder from which the application will retrieve images (required).
+                            </div>
+                        </span>
+                    </label>
+                    <input type="file" id="srcFolderInput" webkitdirectory required onchange="displayFolderInfo()">
+                    <div id="srcFolderMessage" class="folder-info"></div>
+                    <input type="hidden" id="srcFullPath" name="srcFullPath">
+                </div>
+                <div class="folder-input">
+                    <label>Destination Folder
+                        <span class="info-icon">
+                            <i class="fa fa-info-circle"></i>
+                            <div class="tooltip">
+                                The folder where CSV file will be saved. If not specified, the CSV files are saved in the source folder (optional).
+                            </div>
+                        </span>
+                    </label>
+                    <input type="file" id="dstFolderInput" webkitdirectory onchange="displayFolderInfo()">
+                    <div id="dstFolderMessage" class="folder-info"></div>
+                    <input type="hidden" id="dstFullPath" name="dstFullPath">
+                </div>
+            </div>
+
+            <button type="submit">RUN</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
