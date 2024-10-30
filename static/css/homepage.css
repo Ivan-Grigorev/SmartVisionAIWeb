@@ -9,16 +9,27 @@
     }
 
     header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-left: 40px;
-        text-align: left;
+        margin-right: 40px;
         font-family: 'Orbitron', sans-serif;
-        font-style: bold;
+        font-weight: bold;
         font-size: 30px;
     }
 
     header a {
         color: #FFFFFF;
         text-decoration: none;
+    }
+
+    .login-button {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        color: #ABABAB;
+        cursor: pointer;
     }
 
     .button-container {
