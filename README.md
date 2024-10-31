@@ -34,8 +34,8 @@
 Start by cloning the repository to your local machine:
 
 ```bash
-git clone https://github.com/Ivan-Grigorev/SmartVisionAI
-cd SmartVisionAI
+git clone https://github.com/Ivan-Grigorev/SmartVisionAIWeb
+cd SmartVisionAIWeb
 ```
 
 ### Add API Keys
