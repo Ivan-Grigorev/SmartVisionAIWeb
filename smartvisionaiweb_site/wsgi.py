@@ -1,5 +1,5 @@
 """
-WSGI config for smartvisionai_site project.
+WSGI config for smartvisionaiweb_site project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "smartvisionai_site.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "smartvisionaiweb_site.settings")
 
 application = get_wsgi_application()
